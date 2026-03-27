@@ -63,7 +63,7 @@
 
         if (mysqli_num_rows($resultado) > 0) {
             echo "<table border=1> <tr><th>Nome</th>
-            <th>Endereco</th> <th>Telefone></tr>";
+            <th>Endereco</th> <th>Telefone</tr>";
             while ($linha = mysqli_fetch_assoc($resultado)){
                 echo "<tr><td>". $linha['nome']." </td><td> " . $linha['endereco'] . " </td><td> " . $linha['telefone'] . "</td>
                 <td> <a href='editar.php?id=".$linha['id']."'>Editar</a></td>
