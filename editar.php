@@ -33,6 +33,18 @@
         a{
             color:#1e90ff;
         }
+        .btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e90ff;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+}
+.btn:hover{
+    background:#0066cc;
+}
     </style>
 
 
@@ -60,12 +72,12 @@ if (isset($_POST ['atualizar'])){
     $sql2 = "UPDATE contatos SET nome='$novo_nome', endereco = '$novo_endereco', telefone='$novo_fone' WHERE id = $id";
  if (mysqli_query($conexao,$sql2)){
     echo "<h2>Contato foi atualizado com sucesso!</h2>";
-    echo "<a href='index.php'>VOLTAR</a>";
+    echo "<a href='index.php' class='btn'>Voltar</a>";
     exit;
  }
 else{
     echo"<h2>Erro ao atualizar contato. ". mysqli_error($conexao);
-    echo "<a href='index.php'>VOLTAR</a>";
+   echo "<a href='index.php' class='btn'>Voltar</a>";
     exit;
 
 }
@@ -73,11 +85,12 @@ else{
 }
 
 ?>
-<h1>Edição de contatos</h1>
+<h1>Ediçao de contatos</h1>
 <form method= "POST">
-Nome: <input type = "text" name = "nome" value="<?php echo $contato['nome'];?>"><br><br>
-Endereco:  <input type="text" name="endereco" value="<?php echo $contato['endereco'];?>"><br><br>
-Telefone: <input type="text" name="fone" value=" <?php echo $contato['telefone'];?>"><br><br>
+Nome: <input type="text" name="nome" required value="<?php echo $contato['nome'];?>"><br><br>
+Endereco: <input type="text" name="endereco" required value="<?php echo $contato['endereco'];?>"><br><br>
+Telefone: <input type="text" name="fone" required value="<?php echo $contato['telefone'];?>"><br><br>
+
 
 <input type="submit" name="atualizar" value="Atualizar">
 

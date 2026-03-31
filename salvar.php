@@ -16,6 +16,19 @@
             font-size:18px;
             text-decoration:none;
         }
+
+        .btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e90ff;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+}
+.btn:hover{
+    background:#0066cc;
+}
     </style>
 
 </head>
@@ -32,10 +45,10 @@ VALUES ('$nome', '$endereco', '$fone')";
 
 if (mysqli_query($conexao, $sql)){
     echo "<h2>Cadastro realizado com sucesso!</h2>";
-    echo "<a href='index.php'>VOLTAR</a>";
+  echo "<a href='index.php' class='btn'>Voltar</a>";
 }else {
     echo "<h2>Erro ao salvar o contato!</h2>". mysqli_error($conexao);
-    echo "<a href='index.php'>VOLTAR</a>";
+   echo "<a href='index.php' class='btn'>Voltar</a>";
 
 
 }
